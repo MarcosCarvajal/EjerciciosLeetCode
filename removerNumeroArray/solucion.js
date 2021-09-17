@@ -1,8 +1,14 @@
 var removeElement = function(nums, val) {
-    let a = nums.map(function(k){
-       nums[k]!=val?nums[k]:''
-    })
-    return a
+    let cont = 0;
+    for(i=0;i<nums.length;i++){
+        if(nums[i]!=val){
+            cont = cont + 1;
+        }else if(nums[i]==val) {
+            nums[i] = null
+        }
+    }
+    nums.sort()
+    return cont
 };
 
 
