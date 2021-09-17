@@ -1,19 +1,20 @@
-var checkIfExist = function(arr) {
-    if(!arr.length) return 0
-    arr.sort(function(a,b){return a -b})
+function checkIfExist(arr){
     let a;
-    for(j=1;j<arr.length;j++){
-        for(i=0;i<arr.length;i++){
-            if(arr[i]<arr[j]){
-                if(arr[j]/arr[i]==2){
-                    a = true
-                    return a
-                }else {
-                    a = false
+    let i = 0;
+    for(i=0;i<arr.length;){
+        for(j=0;j<arr.length;j++){
+            if(i!=j){
+                if(arr[i]*2==arr[j]||arr[i]==0&&arr[j]==0){
+                    
+                    return true
                 }
             }
         }
-    } return a
-};
+        i = i+1
+    }
+    return false;
+}
 
-console.log(checkIfExist([9,2,5,3,2]))
+console.log(checkIfExist([-16,-13,8]))
+console.log(checkIfExist([-10,12,-20,-8,15]))
+console.log(checkIfExist([-2,0,10,-19,4,6,-8]))
